@@ -1,7 +1,7 @@
 package nguyenvu.clothes_shop.service.impl;
 
 import nguyenvu.clothes_shop.entity.UserEntity;
-import nguyenvu.clothes_shop.exception.RuntimeException;
+import nguyenvu.clothes_shop.exception.CustomException;
 import nguyenvu.clothes_shop.payload.request.SignUpRequest;
 import nguyenvu.clothes_shop.repository.UserRepository;
 import nguyenvu.clothes_shop.service.UserService;
@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
             userRepository.save(user);
             isSuccess = true;
         }catch (Exception e){
-            throw new RuntimeException("Error add user: " + e.getMessage());
+            throw new CustomException("Error add user: " + e.getMessage());
         }
         return isSuccess;
     }
