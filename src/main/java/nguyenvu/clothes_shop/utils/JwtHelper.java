@@ -14,11 +14,11 @@ public class JwtHelper {
     @Value("${jwt.secret.key}")
     private String secretKey;
 
-    public String generateToken() {
+    public String generateToken(String data) {
         Key key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(secretKey));
 
         String token = Jwts.builder()
-                .setSubject("Generate token")
+                .setSubject(data)
                 .signWith(key)
                 .compact();
 

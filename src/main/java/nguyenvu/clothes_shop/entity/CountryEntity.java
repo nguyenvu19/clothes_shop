@@ -1,10 +1,10 @@
 package nguyenvu.clothes_shop.entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity(name = "country")
@@ -24,5 +24,4 @@ public class CountryEntity {
 
     @OneToMany(mappedBy = "country")
     private Set<OrderEntity> orders;
-
 }

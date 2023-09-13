@@ -1,11 +1,16 @@
 package nguyenvu.clothes_shop.entity;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import nguyenvu.clothes_shop.entity.ids.TagBlogIds;
+
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity(name = "tag_blog")
 @Data
@@ -24,5 +29,4 @@ public class TagBlogEntity {
     @JoinColumn(name = "blog_id", insertable = false,updatable = false)
     @JsonIgnore
     private BlogEntity blog;
-
 }

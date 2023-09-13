@@ -1,12 +1,12 @@
 package nguyenvu.clothes_shop.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 @Entity(name = "u_order")
@@ -34,5 +34,4 @@ public class OrderEntity {
     @JoinColumn(name = "user_id")
     @JsonIgnore
     private UserEntity user;
-
 }

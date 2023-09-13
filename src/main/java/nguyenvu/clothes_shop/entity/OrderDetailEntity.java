@@ -1,10 +1,11 @@
 package nguyenvu.clothes_shop.entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import nguyenvu.clothes_shop.entity.ids.OrderDetailIds;
+
+import javax.persistence.*;
 
 @Entity(name = "order_detail")
 @Data

@@ -1,11 +1,11 @@
 package nguyenvu.clothes_shop.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity(name = "tag")
@@ -27,5 +27,4 @@ public class TagEntity {
     @OneToMany(mappedBy = "tag")
     @JsonIgnore
     private Set<TagBlogEntity> tagBlogs;
-
 }

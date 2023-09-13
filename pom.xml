@@ -8,10 +8,10 @@
 		<version>2.7.12</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.cybersoft</groupId>
+	<groupId>nguyenvu</groupId>
 	<artifactId>clothes_shop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cozastore_java21</name>
+	<name>clothes_shop</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -89,6 +89,12 @@
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.10.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 
 	</dependencies>

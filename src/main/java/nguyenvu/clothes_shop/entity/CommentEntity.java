@@ -1,14 +1,14 @@
 package nguyenvu.clothes_shop.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity(name = "comment")
+@Entity(name = "u_comment")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

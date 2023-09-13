@@ -1,11 +1,10 @@
 package nguyenvu.clothes_shop.entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import nguyenvu.clothes_shop.entity.ids.TagBlogIds;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -25,7 +24,7 @@ public class BlogEntity {
     private String description;
     @Column(name = "content")
     private String content;
-    @Column(name = "createdDate")
+    @Column(name = "created_date")
     private LocalDate createdDate;
 
     @OneToMany(mappedBy = "blog")
@@ -35,8 +34,6 @@ public class BlogEntity {
     private Set<CommentEntity> comments;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user_id")
     private UserEntity user;
-
-
 }
