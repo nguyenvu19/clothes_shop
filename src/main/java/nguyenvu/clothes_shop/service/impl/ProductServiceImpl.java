@@ -1,8 +1,7 @@
 package nguyenvu.clothes_shop.service.impl;
 
 import nguyenvu.clothes_shop.entity.ProductEntity;
-import nguyenvu.clothes_shop.payload.response.ImageResponse;
-import nguyenvu.clothes_shop.payload.response.ProductResponse;
+import nguyenvu.clothes_shop.payload.response.*;
 import nguyenvu.clothes_shop.repository.ProductRepository;
 import nguyenvu.clothes_shop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,5 +71,44 @@ public class ProductServiceImpl implements ProductService {
             listProductsResponse.add(productResponse);
         }
         return listProductsResponse;
+    }
+
+    @Override
+    public ProductResponse getProductById(int idProduct) {
+        ProductEntity product = productRepository.findById(idProduct).orElseThrow();
+
+        ProductResponse response = new ProductResponse();
+        ImageResponse imageResponse = new ImageResponse();
+        SizeResponse sizeResponse = new SizeResponse();
+        ColorResponse colorResponse = new ColorResponse();
+        CategoryResponse categoryResponse = new CategoryResponse();
+
+        response.setId(product.getId());
+        response.setName(product.getName());
+        response.setPrice(product.getPrice());
+        response.setDescription(product.getDescription());
+
+        // Map to DAO
+        imageResponse.setId(product.getImage().getId());
+        imageResponse.setImage1(product.getImage().getImage1());
+        imageResponse.setImage2(product.getImage().getImage2());
+        imageResponse.setImage3(product.getImage().getImage3());
+
+        sizeResponse.setId(product.getSize().getId());
+        sizeResponse.setName(product.getSize().getName());
+
+        colorResponse.setId(product.getColor().getId());
+        colorResponse.setName(product.getColor().getName());
+
+        categoryResponse.setId(product.getCategory().getId());
+        categoryResponse.setName(product.getCategory().getName());
+
+        // Set to DAO
+        response.setImage(imageResponse);
+        response.setSize(sizeResponse);
+        response.setColor(colorResponse);
+        response.setCategory(categoryResponse);
+
+        return response;
     }
 }
